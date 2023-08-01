@@ -723,3 +723,24 @@ New flow for incoming requests
 - The Routes file calls the appropriate controller function based on the request path. 
 - The controller function acts as an interface between the model and the view. It queries the database model and returns data to the view, or it gets input data and saves it into the database model. 
 
+## Additional Notes
+
+### Useful Libraries
+
+Express Async Handler
+```
+npm i express-async-handler
+```
+
+Express Async Handler allows you to use Async functions in Express Routes / controllers. It also simplifies error handling, since we do not need to deal with try / catch blocks. 
+
+```JS
+express.get('/', asyncHandler(async (req, res, next) => {
+    const bar = await foo.findAll();
+    res.send(bar)
+}))
+```
+
+https://zellwk.com/blog/async-await-express/
+
+
