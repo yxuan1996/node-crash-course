@@ -29,6 +29,8 @@ To enable ES6 modules in Node JS, we can do either of the following:
 
 # Babel
 
+https://www.robinwieruch.de/minimal-node-js-babel-setup/
+
 Babel is a transpiler that translates our code to plain JS. If we use advanced JS features in our code, Babel will convert it to plain, vanilla JS that is understood by all browsers.
 
 Babel is useful as it allows us to mix and match ES6 syntax and the older 'require' syntax. 
