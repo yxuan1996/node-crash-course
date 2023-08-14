@@ -27,4 +27,44 @@ To enable ES6 modules in Node JS, we can do either of the following:
 - Add `"type": "module" ` to `package.json`. This allows node to enable ES6 modules in all JS files.
 - Save the JS files with `.mjs` extension. 
 
+# Babel
+
+Babel is a transpiler that translates our code to plain JS. If we use advanced JS features in our code, Babel will convert it to plain, vanilla JS that is understood by all browsers.
+
+Babel is useful as it allows us to mix and match ES6 syntax and the older 'require' syntax. 
+
+For more details see `index.js` in the Babel folder. 
+
+### Using Babel with Nodemon
+The Nodemon library will auto-restart our server when it detects any code changes in JS files. 
+
+We install the nodemon library, the core babel library and the most commonly used babel preset. 
+
+```
+npm install nodemon --save-dev
+npm install @babel/core @babel/node --save-dev
+npm install @babel/preset-env --save-dev
+```
+
+In `package.json`, we modify our npm start script so that it uses nodemon to watch for code changes and babel to transpile code. 
+
+```JSON
+ "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+In the project's root folder, we create a `.babelrc` file and define Babel config
+
+```
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+```
+
+
+
 
